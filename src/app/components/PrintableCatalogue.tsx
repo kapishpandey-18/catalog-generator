@@ -48,7 +48,6 @@ function PageHeader({ title, brand = "BBS" }: PageHeaderProps) {
     <>
       <div className="page__header-row">
         <div className="page__header-left">
-          <div className="page__header-diamond" />
           <span className="page__header-title">{title}</span>
         </div>
         <img src="/bbs-logo-bg.png" alt="Logo" className="page_logo_header" />
@@ -151,11 +150,7 @@ function CoverPage() {
     <PageShell centered>
       <div className="cover">
         <div className="cover__wrapper">
-          <div className="cover__ornament">
-            <div className="cover__ornament-line" />
-            <div className="cover__ornament-diamond" />
-            <div className="cover__ornament-line" />
-          </div>
+          <div className="cover__ornament"></div>
           <div className="cover__logo">
             <img
               src="/bbs-logo-bg.png"
@@ -163,11 +158,7 @@ function CoverPage() {
               className="cover__logo-img"
             />
           </div>
-          <div className="cover__divider">
-            <div className="cover__divider-line" />
-            <div className="cover__divider-dot" />
-            <div className="cover__divider-line" />
-          </div>
+          <div className="cover__divider"></div>
           <div className="cover__tagline">Unlock Your Best Self</div>
           <div className="cover__services">
             <div className="cover__services-line" />

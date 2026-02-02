@@ -26,13 +26,13 @@
   --page-pad: 24px;
 
   /* Grid Spacing */
-  --col-gap: 100px;
-  --service-gap: 25px;
-  --subsection-gap: 40px;
-  --header-to-subsection: 20px;
+  --col-gap: 20px;
+  --service-gap: 22px;
+  --subsection-gap: 28px;
+  --header-to-subsection: 16px;
 
   /* Visual Tokens */
-  --divider: 12px;
+  --divider: 5px;
   --gold: #c9a24d;
   --gold-muted: rgba(201, 162, 77, 0.5);
   --gold-subtle: rgba(201, 162, 77, 0.2);
@@ -231,10 +231,13 @@
 
 .page__header-title {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0.15rem;
   color: var(--gold);
+  padding: 6px 12px;
+  background: var(--gold-dim);
+  border-left: 2px solid var(--gold-muted);
 }
 
 .page__header-brand {
@@ -246,13 +249,7 @@
 }
 
 .page__header-line {
-  height: var(--divider);
-  background: linear-gradient(
-    90deg,
-    var(--gold-muted) 0%,
-    var(--gold-subtle) 50%,
-    transparent 100%
-  );
+  display: none;
 }
 
 /* ============================================
@@ -314,7 +311,7 @@
 
 .subsection-header__title {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
@@ -333,24 +330,35 @@
 }
 
 .subsection-header__line {
-  flex: 1;
-  height: var(--divider);
-  background: linear-gradient(90deg, var(--gold-subtle) 0%, transparent 100%);
+  display: none;
 }
 
 /* ============================================
-   SERVICE ITEM - STRICT STRUCTURE
+   SERVICE ITEM - 3D CARD WITH OVERLAY
    ============================================ */
 
 .service-item {
-  min-height: 40px;
-  padding: 10px 0;
-  border-bottom: var(--divider) solid var(--gold-faint);
+  position: relative;
+  min-height: 50px;
+  padding: 14px 16px;
+  border-radius: 8px;
   break-inside: avoid;
   page-break-inside: avoid;
+
+  /* Clean card design - PDF friendly */
+  background: #1a1612;
+
+  /* Gold border accent */
+  border: 1px solid rgba(201, 162, 77, 0.25);
+  border-left: 3px solid #c9a24d;
+
+  /* Simple shadow for depth */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .service-item__row {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -366,12 +374,14 @@
   color: var(--gold);
   flex: 1;
   min-width: 0;
+  /* Text shadow for depth */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .service-item__price {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--gold);
   white-space: nowrap;
   text-align: right;
@@ -379,6 +389,8 @@
   align-items: baseline;
   gap: 3px;
   flex-shrink: 0;
+  /* Price highlight */
+  text-shadow: 0 0 10px rgba(201, 162, 77, 0.3);
 }
 
 .service-item__price-note {
@@ -448,7 +460,7 @@
 
 .cover__logo {
   position: relative;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .cover__logo::before {

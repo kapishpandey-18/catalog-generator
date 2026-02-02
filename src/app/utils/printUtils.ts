@@ -81,8 +81,8 @@ function convertToPageContent(paginatedPage: PaginatedPage): PageContent {
     title: block.title,
     services: block.services,
     isContinuation: block.isContinuation,
-    continuationLabel: block.totalPages 
-      ? `(${block.continuationIndex}/${block.totalPages})` 
+    continuationLabel: block.totalPages
+      ? `(${block.continuationIndex}/${block.totalPages})`
       : undefined,
   }));
 

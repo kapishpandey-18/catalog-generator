@@ -89,7 +89,7 @@ export const catalogueData: CategoryData[] = [
             name: "Global Hair Colour – Shoulder Length",
             description:
               "Even and vibrant global colour application for shoulder-length hair.",
-            price: "₹300",
+            price: "₹3000",
           },
           {
             name: "Global Hair Colour – Full Length",
@@ -379,7 +379,7 @@ export const catalogueData: CategoryData[] = [
           {
             name: "Rica Brazilian Wax – Side Locks",
             description: "Side locks waxing for a neat face outline.",
-            price: "₹70",
+            price: "₹100",
           },
           {
             name: "Rica Brazilian Wax – Upper Lips",
@@ -416,7 +416,7 @@ export const catalogueData: CategoryData[] = [
             name: "Eyebrow Threading",
             description:
               "Eyebrow shaping with threading for clean, defined brows.",
-            price: "₹40",
+            price: "₹50",
           },
           {
             name: "Forehead Threading",
@@ -633,6 +633,11 @@ export const catalogueData: CategoryData[] = [
             description: "Full body bleach using Oxylife range.",
             price: "₹1,650",
           },
+             {
+            name: "Fyc Red Wine Bleach – Face",
+            description: "Full body bleach using Oxylife range.",
+            price: "₹350",
+          },
         ],
       },
       {
@@ -643,6 +648,12 @@ export const catalogueData: CategoryData[] = [
             description:
               "Gold facial to nourish, brighten and improve skin glow.",
             price: "₹1,500",
+          },
+          {
+            name: "Oxylife Vitamin C Facial",
+            description:
+              "Gold facial to nourish, brighten and improve skin glow.",
+            price: "₹2500",
           },
           {
             name: "Vedic Line Fruit Facial",
@@ -683,6 +694,16 @@ export const catalogueData: CategoryData[] = [
             name: "Aroma Fruit Facial",
             description: "Aroma fruit facial for freshness and light glow.",
             price: "₹1000",
+          },
+             {
+            name: "Aroma Diamond Facial",
+            description: "Aroma diamond facial for luxury glow and smooth skin.",
+            price: "₹1500",
+          },
+             {
+            name: "Skinora Vitamin C Facial",
+            description: "Skinora vitamin C facial for freshness and light glow.",
+            price: "₹1500",
           },
           {
             name: "O3+ Premium Facial",
@@ -794,91 +815,71 @@ export const catalogueData: CategoryData[] = [
     women: [
       {
         title: "Nails",
-        // services: [
-        //   {
-        //     name: "Nail Extension with Gel Nail Paint",
-        //     description: "Nail extensions finished with gel polish for a glossy, durable look.",
-        //     price: "₹1,000",
-        //   },
-        //   {
-        //     name: "Nail Extension with Acrylic",
-        //     description: "Acrylic nail extensions for a strong, long-lasting finish.",
-        //     price: "₹1,500",
-        //   },
-        //   {
-        //     name: "Gel Nail Paint",
-        //     description: "Gel polish application for a glossy, chip-resistant finish.",
-        //     price: "₹700",
-        //   },
-        //   {
-        //     name: "Nail Gel Remove",
-        //     description: "Safe gel polish removal to protect nail health.",
-        //     price: "₹500",
-        //   },
-        //   {
-        //     name: "Nail Art (Per Finger)",
-        //     description: "Custom nail art per finger to enhance your gel or extension look.",
-        //     price: "₹50",
-        //   },
-        // ],
         services: [
           {
             name: "Acrylic Tips with Gel Nail Paint",
-            price: "999",
+            price: "₹999",
             description:
               "Stylish acrylic nail tips finished with high-shine gel nail paint for a smooth, long-lasting and elegant look.",
           },
           {
             name: "Acrylic Tips with Gel + 2 Glitter",
-            price: "1099",
+            price: "₹1,099",
             description:
               "Acrylic nail extensions enhanced with gel polish and two glitter accents for a glamorous, eye-catching finish.",
           },
           {
             name: "Acrylic with French Tips",
-            price: "1199",
+            price: "₹1,199",
             description:
               "Classic acrylic nails paired with timeless French tips for a clean, sophisticated, and elegant appearance.",
           },
           {
             name: "Acrylic with French + Double Tip",
-            price: "1299",
+            price: "₹1,299",
             description:
               "Premium acrylic nail extensions with French styling and double-tip detailing for a bold and refined nail look.",
           },
           {
             name: "Nail Paint Removal (Gel & Simple)",
-            price: "399",
+            price: "₹399",
             description:
               "Gentle and safe removal of gel or regular nail paint to maintain nail health and prevent damage.",
           },
           {
             name: "Nail Paint with Glitter",
-            price: "499",
+            price: "₹499",
             description:
               "Glossy nail paint application with glitter highlights for a vibrant, party-ready, and stylish finish.",
           },
           {
             name: "Gel Nail Paint with One Finger Art (Per Hand)",
-            price: "50",
-            // "price_unit": "per_hand",
+            price: "₹50",
             description:
               "Gel nail paint with elegant single-finger nail art on each hand to add a subtle yet artistic touch.",
           },
           {
             name: "Cat Eye Effect",
-            price: "1299",
+            price: "₹1,299",
             description:
               "Magnetic cat eye nail effect that creates a stunning light-reflective finish with depth and dimension.",
           },
           {
             name: "Chrome Nails (Both Hands)",
-            price: "799",
+            price: "₹799",
             description:
               "High-shine chrome nail finish on both hands for a bold, mirror-like, and ultra-modern nail look.",
           },
         ],
       },
+    ],
+    men: [],
+    kids: [],
+  },
+  {
+    name: "MANICURE/PEDICURE",
+    subtitle: "CARE",
+    women: [
       {
         title: "Manicure & Pedicure",
         services: [
@@ -901,6 +902,18 @@ export const catalogueData: CategoryData[] = [
             price: "₹500",
           },
           {
+            name: "Manicure (Oxylife)",
+            description:
+              "Basic manicure using Oxylife range for smooth, clean hands.",
+            price: "₹900",
+          },
+          {
+            name: "Manicure (Vedic Line)",
+            description:
+              "Manicure using Vedic Line range for smooth, clean hands.",
+            price: "₹800",
+          },
+          {
             name: "Pedicure (O3+)",
             description: "Pedicure using O3+ range for soft, refreshed feet.",
             price: "₹1000",
@@ -919,8 +932,14 @@ export const catalogueData: CategoryData[] = [
           {
             name: "Pedicure (Oxylife)",
             description:
-              "Basic pedicure using Lotus range for smooth, clean feet.",
+              "Basic pedicure using Oxylife range for smooth, clean feet.",
             price: "₹1000",
+          },
+          {
+            name: "Pedicure (Vedic Line)",
+            description:
+              "Basic pedicure using Vedic Line range for smooth, clean feet.",
+            price: "₹900",
           },
         ],
       },

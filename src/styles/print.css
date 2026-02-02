@@ -1,6 +1,6 @@
 /* ============================================
-   PRINT STYLES - BALANCED (GRADIENTS + OPTIMIZATION)
-   Keeps visual appeal, removes heavy patterns
+   PRINT STYLES - PRESERVE 3D CARD DESIGN
+   Optimized for PDF export without breaking
    ============================================ */
 
 @page {
@@ -9,7 +9,7 @@
 }
 
 @media print {
-  /* Force exact colors */
+  /* Force exact colors and backgrounds */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
@@ -41,7 +41,7 @@
     background: none;
   }
 
-  /* Page - A4 with breaks */
+  /* Page - A4 with strict page breaks */
   .page {
     width: 210mm;
     height: 297mm;
@@ -50,6 +50,7 @@
     box-shadow: none !important;
     page-break-after: always;
     break-after: page;
+    overflow: hidden;
   }
 
   .page:last-child {
@@ -57,14 +58,46 @@
     break-after: auto;
   }
 
-  /* Keep gradient background but remove grid pattern overlay */
+  /* Keep gradient background but remove grid pattern */
   .page__bg::after {
     background: radial-gradient(ellipse at center, var(--gold-dim) 0%, transparent 70%) !important;
     background-size: 100% 100% !important;
   }
 
-  /* Service items don't split */
+  /* Service grid - prevent orphans */
+  .service-grid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Service items - clean design for PDF */
   .service-item {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Subsection headers - prevent breaking */
+  .subsection-header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Page header - prevent breaking */
+  .page__header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Page content - contain overflow */
+  .page__content {
+    overflow: hidden !important;
+  }
+
+  /* Cover and divider pages */
+  .cover,
+  .divider {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }

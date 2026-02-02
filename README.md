@@ -1,43 +1,101 @@
-# Salon Catalog
+# Salon Catalogue Generator
 
-This is a code bundle for Salon Catalog. The original project is available at https://www.figma.com/design/ty9ExpbasPwDzKJrX0k9Ai/Salon-Catalog.
+A printable service catalogue generator for salons. Edit service data and generate a professional PDF catalogue.
 
-## Running the code
+## Quick Start
 
-Run `npm i` to install the dependencies.
+```bash
+# Install dependencies
+npm install
 
-Run `npm run dev` to start the development server.
+# Generate catalogue PDF
+npm run generate
+```
 
----
+## Workflow
 
-## Print / Export Catalogue as PDF
+```
+┌─────────────────────┐
+│  catalogueData.ts   │  ← Edit services, prices, categories
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│    npm run dev      │  ← Preview in browser (localhost:5173)
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│   npm run generate  │  ← Generate images + PDF
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│   catalogue.pdf     │  ← Final output (ready to print/share)
+└─────────────────────┘
+```
 
-### Quick Steps
+## Project Structure
 
-1. Open your browser and navigate to http://localhost:5173/ (or the port shown in terminal)
-2. Click the **"Print / Save PDF"** button at the top right corner
-3. In the browser print dialog:
-   - **Destination**: Select "Save as PDF"
-   - **Pages**: All
-   - **Layout**: Portrait
-   - **More settings** → Enable **"Background graphics"** (required for colors)
-   - **Margins**: None (the pages have built-in 18mm margins)
-4. Click **Save**
+```
+├── src/
+│   ├── app/
+│   │   ├── data/
+│   │   │   └── catalogueData.ts    ← SERVICE DATA (edit this!)
+│   │   └── components/
+│   │       └── PrintableCatalogue.tsx
+│   └── styles/
+│       ├── catalogue.css           ← Main styles
+│       └── print.css               ← Print styles
+├── public/
+│   └── bbs-logo-bg.png             ← Logo image
+├── catalogue-images/               ← Generated page images
+├── catalogue.pdf                   ← Final PDF output
+└── generate-catalogue.cjs          ← Generation script
+```
 
-### Print Structure
+## How to Edit Services
 
-The catalogue is structured for perfect A4 print output:
+Open `src/app/data/catalogueData.ts` and modify:
 
-- **Cover Page**: Brand introduction with logo and tagline
-- **Category Dividers**: Full-page section headers (HAIR, SKIN, MAKEUP, NAILS)
-- **Service Pages**: Each sub-section (e.g., "Hair Treatments", "Waxing") starts on a new page
-  - If a sub-section has many services, it continues to the next page with the title repeated
-  - Services are displayed in two columns for efficient space usage
-  - No service row will split across pages
+```typescript
+{
+  name: "HAIR",           // Category name
+  subtitle: "SERVICES",   // Category subtitle
+  women: [                // Gender section
+    {
+      title: "Hair Cut",  // Subsection title
+      services: [
+        {
+          name: "Hair Cut",
+          description: "Professional haircut...",
+          price: "₹400",
+        },
+        // Add more services...
+      ],
+    },
+  ],
+  men: [...],
+  kids: [...],
+}
+```
 
-### Technical Notes
+## Commands
 
-- Page size: A4 (210mm × 297mm)
-- Margins: 18mm on all sides
-- Colors and backgrounds are preserved in print
-- All UI elements (buttons, instructions) are automatically hidden in print mode
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server (preview at localhost:5173) |
+| `npm run generate` | Generate images + PDF |
+| `npm run build` | Build for production |
+
+## Output
+
+After running `npm run generate`:
+
+- `catalogue-images/` - Individual page images (JPEG)
+- `catalogue.pdf` - Final combined PDF
+
+## Requirements
+
+- Node.js 18+
+- npm

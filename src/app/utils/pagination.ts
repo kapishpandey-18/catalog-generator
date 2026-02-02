@@ -13,7 +13,7 @@
 // ============================================
 
 /** Maximum rows of services per page (1 row = up to 2 services in 2-col grid) */
-export const ROWS_PER_PAGE = 12;
+export const ROWS_PER_PAGE = 10;
 
 /** Rows consumed by a subsection heading */
 export const HEADING_COST = 1;

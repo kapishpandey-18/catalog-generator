@@ -20,3 +20,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Generated output
+catalogue-images/
+catalogue.pdf
+catalogue-final.pdf
